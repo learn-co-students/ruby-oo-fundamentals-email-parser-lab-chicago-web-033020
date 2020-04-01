@@ -11,7 +11,7 @@ class EmailAddressParser
     def parse  
       arr = []
       # spliting on whitespace+,+whitespace OR just whitespace
-      @email_address.split(/\s*,\s*|\s/).each do |email_str|
+      email_address.split(/\s*,\s*|\s/).each do |email_str|
         arr << email_str unless arr.include?(email_str)
       end
       arr
