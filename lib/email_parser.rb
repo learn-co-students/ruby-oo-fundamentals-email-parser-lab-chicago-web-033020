@@ -8,11 +8,11 @@ class EmailAddressParser
       @email_address = email
     end
     
-    def parse
-      email_a = self.email_address.split(/\s*,\s*|\s/)   
+    def parse  
       arr = []
-      email_a.each do |e|
-        arr << e unless arr.include?(e)
+      # spliting on whitespace+,+whitespace OR just whitespace
+      @email_address.split(/\s*,\s*|\s/).each do |email_str|
+        arr << email_str unless arr.include?(email_str)
       end
       arr
     end
